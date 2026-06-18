@@ -68,66 +68,77 @@ movies = [
         "year": 1994, 
         "genre": "Crime, Drama"
         },
-        
+
     {
         "title": "Fight Club", 
         "director": "David Fincher", 
         "year": 1999, 
-        "genre": "Drama"},
+        "genre": "Drama"
+        },
+
     {
         "title": "Interstellar", 
         "director": "Christopher Nolan", 
         "year": 2014, 
         "genre": "Adventure, Drama, Sci-Fi"
         },
+
     {
         "title": "Spirited Away", 
         "director": "Hayao Miyazaki", 
         "year": 2001,
         "genre": "Animation, Adventure, Family"
         },
+
     {
         "title": "La La Land", 
         "director": "Damien Chazelle", 
         "year": 2016, 
         "genre": "Comedy, Drama, Music, Horror"
         },
+
     {
         "title": "Jurassic Park", 
         "director": "Steven Spielberg", 
         "year": 1993, 
         "genre": "Action, Adventure, Sci-Fi"
         },
+
     {
         "title": "Titanic", 
         "director": "James Cameron", 
         "year": 1997, 
         "genre": "Drama, Romance"
         },
+
     {
         "title": "The Lord of the Rings: The Fellowship of the Ring", 
         "director": "Peter Jackson", 
         "year": 2001, "genre": 
         "Adventure, Drama, Fantasy"
         },
+
     {
         "title": "Star Wars: Episode IV - A New Hope", 
         "director": "George Lucas", 
         "year": 1977, 
         "genre": "Action, Adventure, Fantasy"
         },
+
     {
         "title": "Goodfellas", 
         "director": "Martin Scorsese", 
         "year": 1990, 
         "genre": "Biography, Crime, Drama"
         },
+
     {
         "title": "The Silence of the Lambs", 
         "director": "Jonathan Demme", 
         "year": 1991, 
         "genre": "Crime, Drama, Thriller"
         },
+        
 ]
 last_query = None
 last_results = None
