@@ -11,7 +11,7 @@ while True:
         print("Goodbye!")
         break
     if user_input.lower() == 'last':
-        print(" Previous Search History ")
+        print("\n Previous Search History ")
         if last_query is None:
             print("No previous search history found.")
         else:
@@ -30,11 +30,10 @@ while True:
     matches = []
 
     for movie in movies:
-        for term in search_terms:
-            if term.lower() in movie.lower():
-                matches.append(movie)
-                break
-    print("Search Results")
+        if all(term.lower() in movie.lower() for term in search_terms):
+            matches.append(movie)
+            
+    print("\nSearch Results")
     if matches:
         for match in matches:
             print(f"- {match}")
