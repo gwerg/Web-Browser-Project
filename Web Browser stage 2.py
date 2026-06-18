@@ -138,49 +138,31 @@ movies = [
         "year": 1991, 
         "genre": "Crime, Drama, Thriller"
         },
-        
+
 ]
-last_query = None
-last_results = None
 
-print("Movie Search System")
-
-while True:
-    user_input = input("Enter search term(s): ").strip()
-    if user_input.lower() == 'exit':
-        print("Goodbye!")
-        break
-    if user_input.lower() == 'last':
-        print("\n Previous Search History ")
-        if last_query is None:
-            print("No previous search history found.")
-        else:
-            print(f"Last Search Query: '{last_query}'")
-            print(f"Results Found ({len(last_results)}):")
-            for result in last_results:
-                print(f"- {result}")
-        continue
-
-    search_terms = user_input.split()
+def search_movies(movies_list):
+    field = input("Select a search field (title/director/year/genre): ").strip().lower()
+    search_term = input("Enter a search term: ").strip().lower()
     
-    if not search_terms:
-        print("Please enter at least one word to search.")
-        continue
-
-    matches = []
-
-    for movie in movies:
-        if all(term.lower() in movie.lower() for term in search_terms):
-            matches.append(movie)
+    results = []
+    
+    for movie in movies_list:
+        if field in ["title", "director", "year", "genre"]:
+            fields_to_check = [field]
+        else:
+            fields_to_check = ["title", "director", "year", "genre"]
             
-    print("\nSearch Results")
-    if matches:
-        for match in matches:
-            print(f"- {match}")
+        for f in fields_to_check:
+            val = str(movie[f]).lower()
+            if search_term in val:
+                results.append(movie)
+                
+    print("\nResults:")
+    if results:
+        for movie in results:
+            print(f"{movie['title']}, Director: {movie['director']}, Year: {movie['year']}, Genre: {movie['genre']}")
     else:
-        print("No movies matched your search.")
-        
-    print(f"Total results found: {len(matches)}\n")
+        print("No results found.")
 
-    last_query = user_input
-    last_results = matches
+search_movies(movies)
